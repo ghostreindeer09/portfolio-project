@@ -1,0 +1,11 @@
+# Safety net — nested .gitignore files in backend/ and frontend/ also apply.
+# This catches anything at the repo root and reinforces the important ones.
+
+node_modules/
+.env
+.env.local
+*.log
+.DS_Store
+
+# Build outputs
+frontend/dist/
