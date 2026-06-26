@@ -1,7 +1,25 @@
 .projects {
+  position: relative;
   background: var(--ink);
   padding: 140px 0;
   border-top: 1px solid var(--line);
+}
+
+.projects__glow {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 70% 50%, rgba(46, 230, 168, 0.04), transparent 45%);
+  pointer-events: none;
+}
+
+.projects-heading-sticky-wrapper {
+  height: 113vh;
+  position: relative;
+}
+
+.projects-heading-pin {
+  position: sticky;
+  top: 140px;
 }
 
 .projects__eyebrow {

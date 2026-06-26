@@ -1,4 +1,5 @@
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useStickyScroll } from '../hooks/useStickyScroll';
 import './Projects.css';
 
 const PROJECTS = [
@@ -34,12 +35,27 @@ const PROJECTS = [
 
 export default function Projects() {
   const [ref, visible] = useScrollReveal();
+  const [headingWrapperRef, headingProgress] = useStickyScroll();
+
+  const headingOpacity = 1 - Math.min(headingProgress / 0.7, 1);
+  const headingLift = headingProgress * -30;
 
   return (
     <section className="projects" id="projects">
+      <div className="projects__glow" aria-hidden="true" />
       <div className="container">
-        <p className="projects__eyebrow">// projects</p>
-        <h2 className="projects__heading">Proof, since you<br />probably want some.</h2>
+        <div ref={headingWrapperRef} className="projects-heading-sticky-wrapper">
+          <div
+            className="projects-heading-pin"
+            style={{
+              opacity: headingOpacity,
+              transform: `translate3d(0, ${headingLift}px, 0)`,
+            }}
+          >
+            <p className="projects__eyebrow">// projects</p>
+            <h2 className="projects__heading">Proof, since you<br />probably want some.</h2>
+          </div>
+        </div>
 
         <div ref={ref} className={`projects__grid ${visible ? 'is-visible' : ''}`}>
           {PROJECTS.map((p, i) => (

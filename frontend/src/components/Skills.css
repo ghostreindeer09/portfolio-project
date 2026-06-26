@@ -1,7 +1,25 @@
 .skills {
+  position: relative;
   background: var(--ink-raised);
   padding: 140px 0;
   border-top: 1px solid var(--line);
+}
+
+.skills-sticky-wrapper {
+  height: 250vh;
+  position: relative;
+}
+
+.skills-sticky-wrapper .skills {
+  position: sticky;
+  top: 0;
+}
+
+.skills__glow {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 60%, rgba(255, 61, 26, 0.05), transparent 40%);
+  pointer-events: none;
 }
 
 .skills__eyebrow {

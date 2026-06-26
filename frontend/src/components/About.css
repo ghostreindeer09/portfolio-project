@@ -1,7 +1,25 @@
 .about {
+  position: relative;
   background: var(--ink);
   padding: 140px 0;
   border-top: 1px solid var(--line);
+}
+
+.about-sticky-wrapper {
+  height: 250vh;
+  position: relative;
+}
+
+.about-sticky-wrapper .about {
+  position: sticky;
+  top: 0;
+}
+
+.about__glow {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 75% 30%, rgba(46, 230, 168, 0.05), transparent 40%);
+  pointer-events: none;
 }
 
 .about__inner {
