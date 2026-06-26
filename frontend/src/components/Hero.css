@@ -183,3 +183,16 @@
     top: 0;
   }
 }
+
+.hero__greeting {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hero__greeting-inner {
+  pointer-events: auto;
+}
